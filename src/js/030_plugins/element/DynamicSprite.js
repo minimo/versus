@@ -46,16 +46,16 @@ phina.namespace(() => {
       });
 
       //cordova-file-transfre版
-      this.app.downloadFromServer(image)
-        .then(() => {
-          this.isLoaded = true;
-          const texture = phina.asset.AssetManager.get("image", image);
-          this.setImage(texture, width, height);
-          if (this._dummy) {
-            this._dummy.remove();
-            this._dummy = null;
-          }
-        });
+      // this.app.downloadFromServer(image)
+      //   .then(() => {
+      //     this.isLoaded = true;
+      //     const texture = phina.asset.AssetManager.get("image", image);
+      //     this.setImage(texture, width, height);
+      //     if (this._dummy) {
+      //       this._dummy.remove();
+      //       this._dummy = null;
+      //     }
+      //   });
     },
 
     draw: function(canvas) {
