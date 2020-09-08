@@ -33,26 +33,12 @@ phina.namespace(function() {
       this.superInit(options.$safe({ width: 32, height: 32 }));
 
       this.sprite = Sprite("fighter", 32, 32)
-        .setFrameIndex(0)
+        .setFrameIndex(4)
         .addChildTo(this.base);
+    },
 
-      this.afterBanner = [];
-      (2).times(i => {
-        this.afterBanner[i] = AfterBanner()
-          .setLayer(this.world.mapLayer[LAYER_EFFECT_BACK])
-          .disable()
-          .attachTo(this);
-      });
-    },
     update: function() {
-      const rad = (this.direction * 22.5).toRadian();
-      const x = -Math.sin(rad) * 8;
-      const y = Math.cos(rad) * 8;
-      (2).times(i => {
-        const px = offset[this.direction][i].x;
-        const py = offset[this.direction][i].y;
-        this.afterBanner[i].setOffset( x + px, y + py);
-      });
     },
+
   });
 });

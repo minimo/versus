@@ -15,7 +15,6 @@ phina.namespace(function() {
       this.velocity = Vector2(0, 0);
       this.angle = 0;
       this.speed = 10;
-
       this.time = 0;
 
       this.afterBanner = AfterBanner()
