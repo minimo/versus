@@ -12,7 +12,7 @@ phina.namespace(function() {
 
     setup: function() {
       this.mapBase = DisplayElement()
-        .setPosition(0, 0)
+        .setPosition(SCREEN_WIDTH_HALF, SCREEN_HEIGHT_HALF)
         .addChildTo(this);
 
       //レイヤー構築
@@ -23,7 +23,7 @@ phina.namespace(function() {
       });
 
       this.player = Player({ world: this })
-        .setPosition(64, SCREEN_HEIGHT_HALF - 100)
+        .setPosition(-SCREEN_WIDTH_HALF + 64, 0)
         .addChildTo(this.mapLayer[LAYER_PLAYER]);
 
       this.setupMap();
@@ -37,8 +37,8 @@ phina.namespace(function() {
     setupMap: function() {
       for (let i = 0; i < 100; i++) {
         RectangleShape({
-          width: Math.randint(50, 200),
-          height: Math.randint(50, 200),
+          width: Math.randint(50, 100),
+          height: Math.randint(50, 100),
           fill: 'blue',
           stroke: '#aaa',
           strokeWidth: 4,
