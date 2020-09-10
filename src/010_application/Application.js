@@ -72,37 +72,38 @@ phina.namespace(function() {
       const angle1 = gp.getKeyAngle();
       const angle2 = kb.getKeyAngle();
       this.controller = {
-          angle: angle1 !== null? angle1: angle2,
+        angle: angle1 !== null? angle1: angle2,
 
-          up: gp.getKey("up") || kb.getKey("up"),
-          down: gp.getKey("down") || kb.getKey("down"),
-          left: gp.getKey("left") || kb.getKey("left"),
-          right: gp.getKey("right") || kb.getKey("right"),
+        up: gp.getKey("up") || kb.getKey("up"),
+        down: gp.getKey("down") || kb.getKey("down"),
+        left: gp.getKey("left") || kb.getKey("left"),
+        right: gp.getKey("right") || kb.getKey("right"),
 
-          attack: gp.getKey("A") || kb.getKey("X"),
-          jump:   gp.getKey("X") || kb.getKey("Z"),
-          menu:   gp.getKey("start") || kb.getKey("escape"),
+        mainShot: gp.getKey("A") || kb.getKey("Z"),
+        subShot: gp.getKey("X") || kb.getKey("X"),
+        special: gp.getKey("B") || kb.getKey("C"),
+        menu:   gp.getKey("start") || kb.getKey("escape"),
 
-          a: gp.getKey("A") || kb.getKey("Z"),
-          b: gp.getKey("B") || kb.getKey("X"),
-          x: gp.getKey("X") || kb.getKey("C"),
-          y: gp.getKey("Y") || kb.getKey("V"),
+        a: gp.getKey("A") || kb.getKey("Z"),
+        b: gp.getKey("B") || kb.getKey("X"),
+        x: gp.getKey("X") || kb.getKey("C"),
+        y: gp.getKey("Y") || kb.getKey("V"),
 
-          ok: gp.getKey("A") || kb.getKey("Z") || kb.getKey("space") || kb.getKey("return"),
-          cancel: gp.getKey("B") || kb.getKey("X") || kb.getKey("escape"),
+        ok: gp.getKey("A") || kb.getKey("Z") || kb.getKey("space") || kb.getKey("return"),
+        cancel: gp.getKey("B") || kb.getKey("X") || kb.getKey("escape"),
 
-          start: gp.getKey("start") || kb.getKey("return"),
-          select: gp.getKey("select"),
+        start: gp.getKey("start") || kb.getKey("return"),
+        select: gp.getKey("select"),
 
-          pause: gp.getKey("start") || kb.getKey("escape"),
+        pause: gp.getKey("start") || kb.getKey("escape"),
 
-          analog1: gp.getStickDirection(0),
-          analog2: gp.getStickDirection(1),
+        analog1: gp.getStickDirection(0),
+        analog2: gp.getStickDirection(1),
 
-          //前フレーム情報
-          before: before,
+        //前フレーム情報
+        before: before,
       };
-  },
-});
+    },
+  });
   
 });

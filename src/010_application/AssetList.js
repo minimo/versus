@@ -18,6 +18,11 @@ phina.namespace(function() {
               image: {
                 "fighter": "assets/textures/fighter.png",
                 "particle": "assets/textures/particle.png",
+                "rock1": "assets/textures/rock1.png",
+                "rock2": "assets/textures/rock2.png",
+                "rock3": "assets/textures/rock3.png",
+                "shot1": "assets/textures/shot1.png",
+                "shot2": "assets/textures/shot2.png",
               },
               // tmx: {
               //   "map1": "assets/map/map2.tmx",

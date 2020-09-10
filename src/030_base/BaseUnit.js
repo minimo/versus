@@ -10,6 +10,7 @@ phina.namespace(function() {
     },
 
     state: null,
+    velocity: null,
     speed: 0,
 
     sprite: null,
@@ -22,6 +23,8 @@ phina.namespace(function() {
       this.base = DisplayElement().addChildTo(this);
 
       this.before = null;
+
+      this.velocity = Vector2(0, 0);
     },
   });
 

@@ -22,9 +22,14 @@ phina.namespace(function() {
         this.mapLayer[i] = layer;
       });
 
+      //ショートカット
+      this.playerLayer = this.mapLayer[LAYER_PLAYER];
+      this.enemyLayer = this.mapLayer[LAYER_ENEMY];
+      this.shotLayer = this.mapLayer[LAYER_SHOT];
+
       this.player = Player({ world: this })
-        .setPosition(-SCREEN_WIDTH_HALF + 64, 0)
-        .addChildTo(this.mapLayer[LAYER_PLAYER]);
+        .setPosition(-SCREEN_WIDTH_HALF + 16, 0)
+        .addChildTo(this.playerLayer);
 
       this.setupMap();
     },
@@ -62,6 +67,29 @@ phina.namespace(function() {
         player.speed *= 0.98;
       }
       player.y += player.speed;
+
+      if (player.y < -SCREEN_HEIGHT_HALF + 16) {
+        player.y = -SCREEN_HEIGHT_HALF + 16;
+        player.speed = 0;
+      }
+      if (player.y > SCREEN_HEIGHT_HALF - 16) {
+        player.y = SCREEN_HEIGHT_HALF - 16;
+        player.speed = 0;
+      }
+
+      if (player.x < -SCREEN_WIDTH_HALF + 16) {
+        player.x = -SCREEN_WIDTH_HALF + 16;
+        player.speed = 0;
+      }
+      if (player.x > SCREEN_WIDTH_HALF - 16) {
+        player.x = SCREEN_WIDTH_HALF - 16;
+        player.speed = 0;
+      }
+
+      if (ct.mainShot && this.time % 2 == 0) {
+        const shot = Bullet({ x: player.x, y: player.y }).addChildTo(this.shotLayer);
+      }
+        
     },
   });
 
