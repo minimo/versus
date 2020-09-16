@@ -1,6 +1,6 @@
 phina.namespace(function() {
 
-  phina.define('EnemyyFighter', {
+  phina.define('EnemyyPlayer', {
     superClass: 'BaseUnit',
 
     init: function(options) {
@@ -8,7 +8,8 @@ phina.namespace(function() {
       this.superInit(options.$safe({ width: 32, height: 32 }));
 
       this.sprite = Sprite("fighter", 32, 32)
-        .setFrameIndex(0)
+        .setFrameIndex(4)
+        .setScale(-1, 0)
         .addChildTo(this.base);
 
       this.player = options.player;
